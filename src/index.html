@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 
 <body>
     <div class="root">
         <header class="header root__section">
-            <img src="./images/logo.svg" alt="mesto logo" class="logo">
+            <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
         </header>
         <div class="profile root__section">
             <div class="user-info">
@@ -20,9 +20,9 @@
                 <div class="user-info__data">
                     <h1 class="user-info__name"></h1>
                     <p class="user-info__job"></p>
-                    <button class="button user-info__button_edit" data-target="modal_2" onclick="editPopUp.open()">Edit</button>
+                    <button class="button user-info__button_edit" data-target="modal_2">Edit</button>
                 </div>
-                <button class="button user-info__button" data-target="modal_1" onclick="placePopUp.open()">+</button>
+                <button class="button user-info__button" data-target="modal_1">+</button>
             </div>
         </div>
         <div class="places-list root__section">
@@ -30,7 +30,7 @@
         </div>
         <div class="popup popup__place" id="modal_1">
             <div class="popup__content">
-                <img src="./images/close.svg" alt="" class="popup__close">
+                <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form" name="new" novalidate>
                     <div class="form-group">
@@ -48,7 +48,7 @@
 
         <div class="popup popup__edit" id="modal_2">
             <div class="popup__content">
-                <img src="./images/close.svg" alt="" class="popup__close">
+                <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form" name="edit" novalidate>
                     <div class="form-group">
@@ -66,14 +66,14 @@
 
         <div class="popup popup__picture" id="modal_3">
             <div class="divforclosed">
-                <img src="./images/close.svg" alt="" class="popup__close">
+                <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
                 <img class="popup__picture_large">
             </div>
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 
 </body>
 
