@@ -1,0 +1,4 @@
+.popup.popup_is-opened,
+.popup__edit_is-opened {
+    display: flex;
+}

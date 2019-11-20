@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body>
+    <div class="root">
+        <header class="header root__section">
+            <img src="./images/logo.svg" alt="mesto logo" class="logo">
+        </header>
+        <div class="profile root__section">
+            <div class="user-info">
+                <div class="user-info__photo"></div>
+                <div class="user-info__data">
+                    <h1 class="user-info__name"></h1>
+                    <p class="user-info__job"></p>
+                    <button class="button user-info__button_edit" data-target="modal_2" onclick="editPopUp.open()">Edit</button>
+                </div>
+                <button class="button user-info__button" data-target="modal_1" onclick="placePopUp.open()">+</button>
+            </div>
+        </div>
+        <div class="places-list root__section">
+
+        </div>
+        <div class="popup popup__place" id="modal_1">
+            <div class="popup__content">
+                <img src="./images/close.svg" alt="" class="popup__close">
+                <h3 class="popup__title">Новое место</h3>
+                <form class="popup__form" name="new" novalidate>
+                    <div class="form-group">
+                        <input type="text" name="name" minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Название" required>
+                        <span class="error error__name" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="url" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required>
+                        <span class="error error__link" aria-live="polite"></span>
+                    </div>
+                    <button class="button popup__button" disabled>+</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup__edit" id="modal_2">
+            <div class="popup__content">
+                <img src="./images/close.svg" alt="" class="popup__close">
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <form class="popup__form" name="edit" novalidate>
+                    <div class="form-group">
+                        <input type="text" name="myname" minlength="2" maxlength="30" class="popup__input popup__input_type_edit-name" placeholder="Имя" required>
+                        <span class="error error__myname" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="myjob" minlength="2" maxlength="30" class="popup__input popup__input_type_about" placeholder="О себе" required>
+                        <span class="error error__myjob" aria-live="polite"></span>
+                    </div>
+                    <button class="button popup__button popup__button_edit" disabled>Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup__picture" id="modal_3">
+            <div class="divforclosed">
+                <img src="./images/close.svg" alt="" class="popup__close">
+                <img class="popup__picture_large">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

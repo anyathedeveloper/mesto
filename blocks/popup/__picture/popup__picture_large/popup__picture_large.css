@@ -1,0 +1,15 @@
+.popup__picture_large {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+popup__picture_large:after {
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 0, .3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
