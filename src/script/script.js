@@ -14,9 +14,11 @@ import {
 
 /* переменные */
 
+const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort4' : 'https://praktikum.tk/cohort4';
+
 const placesList = document.querySelector('.places-list');
 const userInfo = document.querySelector('.user-info');
-const api = new Api('serverUrl', 'b609187f-538a-4dd9-8e49-ec8acb2e6948');
+const api = new Api(serverUrl, 'b609187f-538a-4dd9-8e49-ec8acb2e6948');
 const cardList = new CardList(placesList, api);
 const placePopUp = new Popup(document.querySelector('#modal_1'));
 const editPopUp = new Popup(document.querySelector('#modal_2'));
